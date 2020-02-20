@@ -1,0 +1,86 @@
+.calculator {
+    margin: 2rem auto 0;
+    max-width: 345px;
+    height: auto;
+    border: 3px solid black;
+    border-radius: 25px;
+}
+
+
+.result-display {
+    font-family: 'Roboto-Medium';
+    font-size: 45px;
+    padding: 5px 5px;
+    width: 100%;
+    height: auto;
+    border: 3px solid black;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+
+.buttons-row {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.btc {
+    font-family: 'Roboto-Medium';
+    font-size: 30px;
+    width: auto;
+    height: auto;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s;
+    text-transform: uppercase;
+    background-color: #fff;
+    
+}
+
+input,
+a, 
+a:hover, 
+a:focus, 
+a:active, 
+button, 
+button:focus, 
+button:active { 
+    outline: none !important;
+}
+
+.btc:hover {
+  color: #ff8c00;
+}
+
+/* .AC, 
+.number-seven, 
+.number-four,
+.number-one,
+.butt,
+.del, 
+.percent, 
+.division,
+.number-eight, 
+.number-nine, 
+.multiply,
+.number-five,
+.number-six,
+.subtraction,
+.number-two,
+.number-three,
+.addition,
+.number-zero,
+.dot,
+.result {
+    font-family: 'Roboto-Medium';
+    font-size: 35px;
+    width: auto;
+    height: auto;
+    padding: 20px 45px;
+   text-align: center;
+   border: 3px solid black;
+} */
