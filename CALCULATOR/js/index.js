@@ -4,6 +4,7 @@ let numbers = document.querySelectorAll('.number'),
     decimals = document.getElementById('decimal'),
     resultBtn = document.getElementById('result'),
     display = document.getElementById('display'),
+    minus = document.getElementById('c'),
     MemoryCurrentNumber = '0',
     MemoryNewNumber = false,
     MemoryPendionOperation = '';
@@ -29,7 +30,11 @@ for (let i=0; i<clearBtns.length; i++) {
     });
 }
 
+
+
 decimals.addEventListener('click', decimal);
+
+minus.addEventListener('click', minusPlus);
 
 resultBtn.addEventListener('click', result);
 
@@ -48,9 +53,9 @@ function numberPress (number) {
 }
 
 function operation(op) {
-    localOperationMemory = display.value;
+     let localOperationMemory = display.value;
 
-    if (MemoryNewNumber) {
+    if (MemoryNewNumber && MemoryPendingOperation !== '=') {
         display.value = MemoryCurrentNumber;
     } else {
         MemoryNewNumber = true;
@@ -61,7 +66,7 @@ function operation(op) {
         } else if (MemoryPendionOperation === '*') {
             MemoryCurrentNumber  *= parseFloat(localOperationMemory);
         } else if (MemoryPendionOperation === '/') {
-            MemoryCurrentNumber /= parseFloat(localOperationMemory);
+            MemoryCurrentNumber /= parseFloat(localOperationMemory);  
         } else {
             MemoryCurrentNumber = parseFloat(localOperationMemory);
         }
@@ -69,20 +74,36 @@ function operation(op) {
         display.value = MemoryCurrentNumber;
         MemoryPendionOperation = op;
     }
-
-    console.log('Клик по кнопке с операцией ' + op + '!')
 }
 
 function clear(id) {
-    display.value = '';
-    console.log('Клик по кнопке ' + id + '!')
+    display.value = '0';
+    MemoryNewNumber = true;
+    MemoryNewNumber = 0;
+    MemoryPendingOperation = '';
 }
 
 function decimal() {
-    console.log('Клик по кнопке c точкой')
+    let localDecimalMemory = display.value;
+
+    if (MemoryNewNumber) {
+        localDecimalMemory ='0.';
+        MemoryNewNumber = false;
+    } else {
+        if (localDecimalMemory.indexOf('.') === -1) {
+            localDecimalMemory += '.';
+        }
+
+        display.value = localDecimalMemory;
+    }
 }
 
-// function result() {
-//     console.log('Клик по кнопке результат')
-// }
+function minusPlus() {
+    let localMinusMemory = display.value;
 
+    if ((localMinusMemory === '0') || (localMinusMemory = ' ')) {
+        localMinusMemory = '-';
+        MemoryNewNumber = false;
+    } 
+        display.value = localMinusMemory;
+}

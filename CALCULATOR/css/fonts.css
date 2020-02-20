@@ -263,3 +263,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Tahoma';
+  src: url('../fonts/Tahoma.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/Tahoma.woff2') format('woff2'),
+      url('../fonts/Tahoma.woff') format('woff'),
+      url('../fonts/Tahoma.ttf') format('truetype'),
+      url('../fonts/Tahoma.svg#Tahoma') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
