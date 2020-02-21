@@ -5,7 +5,7 @@ for (let i = 1; i<=99; i++) {
     if (i % 2 === 0 ) {
         numbers++;
         sum +=i;
-    }
-}
+    };
+};
 
 console.log(`Cумма четных чисел = ${sum}, Количество четных чисел = ${numbers}`);
