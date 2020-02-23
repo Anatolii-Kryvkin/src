@@ -1,0 +1,67 @@
+input,
+button, 
+button:focus, 
+button:active { 
+    outline: none !important;
+}
+
+.conteiner {
+    margin: 2rem auto 0;
+    max-width: 1000px;
+}
+
+.write-panel,
+.button-panel,
+.table {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.write {
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    border-right: 1px solid black;
+}
+
+.column {
+    width: 100%;
+    padding: 10px 50px;
+}
+
+.btn {
+    padding: 8px;
+    background-color: rgb(18, 81, 133);
+    width: 100%;
+    border-radius: 0px;
+    color: #fff;
+    border-right: 1px solid black;
+    font-weight: bold;
+}
+
+.column:not(:last-child) {
+    border-right: 1px solid black;
+}
+
+.row-new-table {
+    text-align: center;
+    border-right: 1px solid black;
+    width: 100%;
+    padding: 10px 50px;
+    color: red;
+}
+
+.newtable {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid black;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.table {
+    margin-bottom: 0 ;
+}
