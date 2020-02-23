@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+  <script>
+    var assert = chai.assert;
+  </script>
+</head>
+
+<body>
+  <script src="/JS/Функции/ex1.js"></script>
+  <script>
+    describe('ex1', function () {
+        it('pass number 0', function () {
+            assert.equal(ex1(0), 'Введите чило от 1 до 7!');
+        });
+        it('pass number 1', function () {
+            assert.equal(ex1(1), 'Понедельник');
+        });
+        it('pass number 3', function () {
+            assert.equal(ex1(3), 'Среда');
+        });
+        it('pass number 6', function () {
+            assert.equal(ex1(6), 'Суббота');
+        });
+    });
+  </script>
+  <div id="mocha"></div>
+  <script>
+    mocha.run();
+  </script>
+</body>
+
+</html>

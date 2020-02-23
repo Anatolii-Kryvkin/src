@@ -76,6 +76,21 @@ function operation(op) {
     }
 }
 
+function result(num1, op, num2) {
+    if (op === '+') {
+        return parseFloat(num1) + parseFloat(num2);
+    }
+    if (op === '-') {
+        return parseFloat(num1) - parseFloat(num2);
+    }
+    if (op === '*') {
+        return parseFloat(num1) * parseFloat(num2);
+    }
+    if (op === '/') {
+        return parseFloat(num1) / parseFloat(num2);
+    }
+}
+
 function clear(id) {
     display.value = '0';
     MemoryNewNumber = true;
