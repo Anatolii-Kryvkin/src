@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+  <script>
+    var assert = chai.assert;
+  </script>
+</head>
+
+<body>
+  <script src="task1.js"></script>
+  <script src="task2.js"></script>
+  <script src="task3.js"></script>
+  <script src="task4.js"></script>
+  <script src="task5.js"></script>
+  <script src="task6.js"></script>
+  <script>
+    describe('task1', function () {
+        it('Вызываем функцию', function () {
+            assert.equal(task1(), 'Количество чётных чисел - 49, их сумма - 2450');
+        });
+    });
+    describe('task2', function () {
+        it('pass number = 13', function () {
+            assert.equal(task2(13), `13, это простое число!`);
+        });
+        it('pass number = 10', function () {
+            assert.equal(task2(10), `10, это не простое число!`);
+        });
+        it('pass number = 1', function () {
+            assert.equal(task2(1), `1, это не простое число!`);
+        });
+     });
+    describe('task3', function () {
+        it('pass number = 100', function () {
+            assert.equal(task3(100), 'Корень 100, найден методом последовательного подбора = 10');
+        });
+        it('pass number = -26', function () {
+            assert.equal(task3(-26), 'Ошибка: введите натуральное число!');
+        });
+    });
+    describe('task4', function () {
+        it('pass n = 5', function () {
+            assert.equal(task4(5), '120');
+        });
+        it('pass n = 0', function () {
+             assert.equal(task4(0), '1');
+        });
+        it('pass n = 1', function () {
+            assert.equal(task4(1), '1');
+        });
+    });
+    describe('task5', function () {
+        it('pass number = 102', function () {
+             assert.equal(task5(102), 3);
+        });
+        it('pass number = 246896', function () {
+            assert.equal(task5(246896), 35);
+        });
+     });
+    describe('task6', function () {
+        it('pass number = 102', function () {
+            assert.equal(task6(102), 201);
+        });
+                it('pass number = 3485 ', function () {
+            assert.equal(task6(3485), 5843);
+        });
+    });
+  </script>
+  <div id="mocha"></div>
+  <script>
+    mocha.run();
+  </script>
+</body>
+
+</html>
