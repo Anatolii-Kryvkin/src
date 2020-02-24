@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+  <script>
+    var assert = chai.assert;
+  </script>
+</head>
+
+<body>
+  <script src="/task1.js"></script>
+  <script src="/task2.js"></script>
+  <script src="/task3.js"></script>
+  <script src="/task4.js"></script>
+  <script src="/task5.js"></script>
+  <script>
+    describe('task1', function () {
+        it('pass a = 2, b = 5', function () {
+            assert.equal(task1(2, 5), 10);
+        });
+        it('pass a = -1, b = 5', function () {
+            assert.equal(task1(-1, 5), 4);
+        });
+        it('pass a = null, b = 5', function () {
+            assert.equal(task1(0, 5), 0);
+        });
+        it('pass a = -1.25, b = 5', function () {
+            assert.equal(task1(-1.25, 5), 3.75);
+        });
+    });
+
+    describe('task2', function () {
+      it('pass x = 2, y = 5', function () {
+          assert.equal(task2(2, 5), 'Точка пренадлежит I четверти');
+      });
+      it('pass x = -2, y = -5', function () {
+          assert.equal(task2(-2, 5), 'Точка пренадлежит II четверти');
+      });
+      it('pass x = -2, y = -5', function () {
+           assert.equal(task2(-2, -5), 'Точка пренадлежит III четверти');
+      });
+      it('pass x = 2, y = -5', function () {
+           assert.equal(task2(2, -5), 'Точка пренадлежит IV четверти');
+       });
+      it('pass x = 0, y = 0', function () {
+          assert.equal(task2(0, 0), 'Точка находится в начале координат');
+      });
+      it('pass x = 0, y = 5', function () {
+           assert.equal(task2(0, 5), 'Точка находится на оси X');
+      });
+      it('pass x = 2, y = 0', function () {
+           assert.equal(task2(2, 0), 'Точка находится на оси Y');
+      });
+  });
+  describe('task3', function () {
+      it('pass a = 2, b = 5, c = 1', function () {
+          assert.equal(task3(2, 5, 1), 8);
+      });
+      it('pass a = -2, b = 5, c = 1', function () {
+           assert.equal(task3(-2, 5, 1), 6);
+      });
+      it('pass a = 2, b = -5, c = 1', function () {
+           assert.equal(task3(-2, -5, 1), 1);
+      });
+      it('pass a = 0, b = 5, c = 1', function () {
+           assert.equal(task3(0, 5, 1), 6);
+      });
+  }); 
+  describe('task4', function () {
+      it('pass a = 1, b = 2, c = 3', function () {
+          assert.equal(task4(1, 2, 3), 9);
+      });
+       it('pass a = -1, b = -2, c = -3', function () {
+          assert.equal(task4(3, 15, 1), 48);
+       });
+      it('pass a = 2, b = 2, c = 3', function () {
+          assert.equal(task4(2, 2, 3), 15);
+      });
+      it('pass a = 0, b = 0, c = 0', function () {
+          assert.equal(task4(0, 0, 0), 3);
+       });
+   });
+  describe('task5', function () {
+      it('pass rating = 1', function () {
+          assert.equal(task5(1), 'Оценка студента F');
+      });
+      it('pass rating = 22', function () {
+           assert.equal(task5(22), 'Оценка студента E');
+      });
+      it('pass rating = 45', function () {
+           assert.equal(task5(45), 'Оценка студента D');
+      });
+      it('pass rating = 65', function () {
+          assert.equal(task5(65), 'Оценка студента C');
+      });
+      it('pass rating = 79', function () {
+          assert.equal(task5(79), 'Оценка студента B');
+      });
+      it('pass rating = 100', function () {
+           assert.equal(task5(100), 'Оценка студента A');
+      });            
+   });
+            
+    
+  </script>
+  <div id="mocha"></div>
+  <script>
+    mocha.run();
+  </script>
+</body>
+
+</html>

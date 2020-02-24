@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+  <script>
+    var assert = chai.assert;
+  </script>
+</head>
+
+<body>
+  <script src="task1.js"></script>
+  <script src="/task2.js"></script>
+  <script src="/task3.js"></script>
+  <script src="/task4.js"></script>
+  <script>
+    describe('task1', function () {
+        it('pass number 0', function () {
+            assert.equal(task1(0), 'Введите чило от 1 до 7!');
+        });
+        it('pass number 1', function () {
+            assert.equal(task1(1), 'Понедельник');
+        });
+        it('pass number 3', function () {
+            assert.equal(task1(3), 'Среда');
+        });
+        it('pass number 6', function () {
+            assert.equal(task1(6), 'Суббота');
+        });
+    });
+    describe('task2', function () {
+        it('pass number 1', function () {
+            assert.equal(task2(1), 'один');
+        });
+        it('pass number 15', function () {
+            assert.equal(task2(15), 'пятнадцать');
+        });
+        it('pass number 130', function () {
+            assert.equal(task2(130), 'сто тридцать');
+        });
+        it('pass number 250', function () {
+            assert.equal(task2(250), 'двести пятьдесят');
+        });
+        it('pass number 375', function () {
+            assert.equal(task2(375), 'триста семьдесят пять');
+        });
+        it('pass number 888', function () {
+            assert.equal(task2(888), 'восемьсот восемьдесят восемь');
+        });
+        it('pass number 999', function () {
+            assert.equal(task2(999), 'девятьсот девяносто девять');
+        });
+    });
+    describe('task3', function () {
+        it('pass number 1', function () {
+            assert.equal(task3('один'), 1);
+        });
+        it('pass number 15', function () {
+            assert.equal(task3('пятнадцать'), 15);
+        });
+        it('pass number 130', function () {
+            assert.equal(task3('сто тридцать'), 130);
+        });
+        it('pass number 250', function () {
+            assert.equal(task3('двести пятьдесят'), 250);
+        });
+        it('pass number 375', function () {
+            assert.equal(task3('триста семьдесят пять'), 375);
+        });
+        it('pass number 888', function () {
+            assert.equal(task3('восемьсот восемьдесят восемь'), 888);
+        });
+        it('pass number 999', function () {
+            assert.equal(task3('девятьсот девяносто девять'), 999);
+        });
+    });
+    describe('task4', function () {
+        it('pass x1=2, y1=10, x2=20, y2=30', function () {
+            assert.equal(task4(2, 10, 20, 30), 26.91);
+        });
+        it('pass x1=-22, y1=25, x2=7, y2=-40', function () {
+            assert.equal(task4(-22, 25, 7, -40), 71.18);
+        });
+        it('pass x1=-25, y1=-103, x2=-4, y2=-23', function () {
+            assert.equal(task4(-25, -103, -4, -23), 82.71);
+        });
+    });
+  </script>
+  <div id="mocha"></div>
+  <script>
+    mocha.run();
+  </script>
+</body>
+
+</html>
