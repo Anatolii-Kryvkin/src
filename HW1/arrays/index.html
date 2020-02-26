@@ -1,3 +1,4 @@
+<<<<<<< HEAD:HW1/arrays/index.html
 <!DOCTYPE html>
 <html>
 
@@ -133,4 +134,141 @@
   </script>
 </body>
 
+=======
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/2.1.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/2.0.0/chai.js"></script>
+  <script>
+    var assert = chai.assert;
+  </script>
+</head>
+
+<body>
+  <script src="task1.js"></script>
+  <script src="task2.js"></script>
+  <script src="task3.js"></script>
+  <script src="task4.js"></script>
+  <script src="task5.js"></script>
+  <script src="task6.js"></script>
+  <script src="task7.js"></script>
+  <script src="task8.js"></script>
+  <script src="task9.js"></script>
+  <script>
+    describe('task1', function () {
+        it('pass Array = [232, 343, -1]', function () {
+             assert.equal(task1([232, 343, -1]), -1);
+        });
+        it('pass Array = [232, 343, 500]', function () {
+            assert.equal(task1([232, 343, 500]), 232);
+        });
+        it('pass Array = [1023, 343, 1005]', function () {
+             assert.equal(task1([1023, 343, 1005]), 343);
+        });
+     });
+    describe('task2', function () {
+        it('pass Array = [232, 343, 1]', function () {
+            assert.equal(task2([232, 343, 1]), 343);
+        });
+        it('pass Array = [232, 343, 500]', function () {
+            assert.equal(task2([232, 343, 500]), 500);
+        });
+        it('pass Array = [1023, 343, 1005]', function () {
+             assert.equal(task2([1023, 343, 1005]), 1023);
+        });
+    });
+    describe('task3', function () {
+        it('pass Array = [1000, 4534, 1, 20]', function () {
+            assert.equal(task3([1000, 4534, 1, 20]), 2);
+        });
+        it('pass Array = [1023, 343, 1005, 220]', function () {
+            assert.equal(task3([1023, 343, 1005, 220]), 3);
+        });
+        it('pass Array = [3434, 5050, 4343, 68441]', function () {
+             assert.equal(task3([3434, 5050, 4343, 68441]), 0);
+        });
+    });
+     describe('task4', function () {
+        it('pass numArray = [2323, 342, 1, 2555]', function () {
+            assert.equal(task4([2323, 342, 1, 2555]), 3);
+        });
+        it('pass Array = [1023, 343, 1005, 220]', function () {
+            assert.equal(task4([1023, 343, 1005, 220]), 0);
+        });
+        it('pass Array = [3434, 5050, 4343, 68441]', function () {
+             assert.equal(task4([3434, 5050, 4343, 68441]), 3);
+         });
+    });
+    describe('task5', function () {
+        it('pass Array = [2323, 1, 232, 1, 3453, 1]', function () {
+             assert.equal(task5([2323, 1, 232, 1]), 2);
+        });
+        it('pass Array = [3434, 5050, 4343, 68441]', function () {
+             assert.equal(task5([3434, 5050, 4343, 68441]), 73491);
+        });
+        it('pass Array = [1023, 343, 1005, 220]', function () {
+             assert.equal(task5([1023, 343, 1005, 220]), 563);
+        });
+    });
+    describe('task6', function () {
+         it('pass Array = [1, 2, 3]', function () {
+             assert.deepEqual(task6([1, 2, 3]), [3, 2, 1]);
+        });
+        it('pass Array = [1023, 343, 1005, 220]', function () {
+            assert.deepEqual(task6([1023, 343, 1005, 220]), [220, 1005, 343, 1023]);
+        });
+        it('pass Array = [3434, 5050, 4343, 68441]', function () {
+            assert.deepEqual(task6([3434, 5050, 4343, 68441]), [ 68441, 4343, 5050, 3434 ]);
+        });
+    });
+    describe('task7', function () {
+          it('pass Array = [1, 2, 3]', function () {
+             assert.equal(task7([1, 2, 3]), 2);
+        });
+        it('pass Array = [3, 4, 4]', function () {
+             assert.equal(task7([3, 4, 4]), 3);
+        });
+        it('pass Array = [5, 10, 20, 40, 37]', function () {
+            assert.equal(task7([5, 10, 20, 40, 37]), 5);
+        });
+    });
+    describe('task8', function () {
+        it('pass Array = [1, 2, 3, 4]', function () {
+            assert.deepEqual(task8([1, 2, 3, 4]), [3, 4, 1, 2]);
+        });
+         it('pass Array = [3, 4, 4, 5]', function () {
+             assert.deepEqual(task8([3, 4, 4, 5]), [ 4, 5, 3, 4 ]);
+        });
+        it('pass Array = [1023, 343, 1005, 220]', function () {
+            assert.deepEqual(task8([1023, 343, 1005, 220]), [ 1005, 220, 1023, 343 ]);
+         });
+    });
+    describe('task9', function () {
+        it('pass Array = [80, 2, 3, 40]', function () {
+            assert.deepEqual(task9([80, 2, 3, 40]), [ 2, 3, 40, 80 ]);
+        });
+        it('pass Array = [78, 4, 30, 5]', function () {
+             assert.deepEqual(task9([78, 4, 30, 5]), [ 4, 5, 30, 78 ]);
+        });
+        it('pass Array = [1023, 343, 1005, 220]', function () {
+             assert.deepEqual(task9([1023, 343, 1005, 220]), [ 220, 343, 1005, 1023 ] );
+        });
+    });
+
+  </script>
+  <div id="mocha"></div>
+  <script>
+    mocha.run();
+  </script>
+</body>
+
+>>>>>>> 0bfb9df792b6b25797c5320db47eacfff9be39b0:H.W/JS/Одномерные массивы/testUNIT.html
 </html>
