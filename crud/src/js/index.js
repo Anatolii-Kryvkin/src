@@ -6,22 +6,23 @@ let id = document.getElementById('id'),
     readBtn = document.getElementById('read'),
     updateBtn = document.getElementById('update'),
     deleteBtn = document.getElementById('del'),
-    dell = document.querySelector('.del'),
-    people = [];
-    
-    createBtn.addEventListener('click', create);
-    readBtn.addEventListener('click', read);
-    updateBtn.addEventListener('click', update);
-    deleteBtn.addEventListener('click', del);
+    dell = document.querySelector('.del');
+const people = [];
+
+createBtn.addEventListener('click', create);
+readBtn.addEventListener('click', read);
+updateBtn.addEventListener('click', update);
+deleteBtn.addEventListener('click', del);
 
     function create() {
+        
         if (id.value === '' ||
             firstName.value === '' ||
             lastName.value === '' ||
             age.value === '') {
                 alert('Enter all data!')
-            
-            } else {
+
+            } else   { 
 
                 let newTable = document.createElement('div');
                     newTable.className = "newtable";
@@ -41,12 +42,13 @@ let id = document.getElementById('id'),
                     newLastName.className = "row-new-table";
                     newLastName.innerHTML = document.getElementById('last-name').value;
                     newTable.appendChild(newLastName);
-                                
+
                 let newAge = document.createElement('div');
                     newAge.className = "row-new-table";
                     newAge.innerHTML = document.getElementById('age').value;
                     newTable.appendChild(newAge);
-
+                        
+                
                     const person = new Object();
                         person.source = newTable;
                         person.id = newId,
@@ -56,20 +58,30 @@ let id = document.getElementById('id'),
                         people.unshift(person);
                         console.log(people);
                     let key = id.value ;
-                    localStorage.setItem(key, person.source.innerHTML) 
-            }   
+                    localStorage.setItem(key, person.source.innerHTML)
+                    
+        }   
         clear(); 
     }   
 
     function read() {
         for(let i=0; i<localStorage.length; i++) {
             let key = localStorage.key(i);
+            
             let newTable = document.createElement('div'); 
-            newTable.className = "newtable";
-            newTable.innerHTML = localStorage.getItem(key);
-            dell.appendChild(newTable);  
+                    newTable.className = "newtable";
+                    newTable.innerHTML = localStorage.getItem(key);
+                    dell.appendChild(newTable);
+
+            const person = new Object();
+                  person.source = newTable;
+                  person.id = key
+                  person.firstName = key
+                  person.lastName = key
+                  person.age = key
+                  people.unshift(person)
         }
-        localStorage.clear();
+    localStorage.clear();
     };
 
     function update() {
@@ -81,7 +93,14 @@ let id = document.getElementById('id'),
                     people[i].firstName.innerHTML = firstName.value;
                     people[i].lastName.innerHTML = lastName.value;
                     people[i].age.innerHTML = age.value;
-                } else if (id.value == !people[i].id.innerHTML){
+
+                } else if (id.value === people[i].id) { 
+
+                    people[i].source.children[1].innerText = firstName.value;
+                    people[i].source.children[2].innerText = lastName.value;
+                    people[i].source.children[3].innerText = age.value;
+                    
+                } else if (id.value != people[i].id.innerHTML && id.value != people[i].id){
                     alert('Sorry, this ID not found!')
                 }
             }
@@ -94,11 +113,15 @@ let id = document.getElementById('id'),
             alert('Not found, enter ID!')
         } else {
             for(let i=0; i<people.length; i++) {
-                if(id.value == people[i].id.innerHTML) {
+                if(id.value === people[i].id.innerHTML) {   
                     dell.removeChild(people[i].source)
-                } else if (id.value == !people[i].id.innerHTML) {
-                    alert('Sorry, this ID not found!')
-                }
+                } 
+                else if (id.value === people[i].id)  {
+                    dell.removeChild(people[i].source);
+                } 
+                else if (id.value != people[i].id.innerHTML && id.value != people[i].id) {
+                   alert('Sorry, this ID not found!')
+                } 
             }
         } 
         clear();  
@@ -111,3 +134,7 @@ let id = document.getElementById('id'),
         document.getElementById("age").value = "";
     }
 
+    createBtn.addEventListener('click', create);
+    readBtn.addEventListener('click', read);
+    updateBtn.addEventListener('click', update);
+    deleteBtn.addEventListener('click', del);

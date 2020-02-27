@@ -4,13 +4,18 @@
     "scripts": {
         "start": "gulp",
         "clean": "gulp clean",
-        "build": "gulp build"
+        "build": "gulp build",
+        "test": "nyc mocha --opts ./mocha.opts"
     },
     "dependencies": {
         "@babel/core": "7.6.0",
         "@babel/preset-env": "7.6.0",
+        "@babel/register": "7.8.3",
         "browser-sync": "2.26.7",
+        "chai": "4.2.0",
         "del": "5.1.0",
+        "eslint": "^6.8.0",
+        "esm": "3.2.25",
         "gulp": "4.0.2",
         "gulp-babel": "8.0.0",
         "gulp-concat": "2.6.1",
@@ -19,7 +24,13 @@
         "gulp-file-include": "2.1.0",
         "gulp-less": "4.0.1",
         "gulp-sass": "4.0.2",
+        "jsdom": "16.2.0",
+        "localStorage": "1.0.4",
+        "mocha": "7.1.0",
+        "nyc": "^15.0.0",
         "prettier": "1.18.2",
+        "raf": "3.4.1",
+        "sinon": "9.0.0",
         "through2": "3.0.1"
     }
 }
