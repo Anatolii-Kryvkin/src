@@ -61,7 +61,7 @@ if(stringToArr.length === 1) {
     } else if(indexNull in second) {
         result = second[indexNull];
     } else if(indexNull in third) {
-        result = thitd[indexNull];
+        result = third[indexNull];
     } else if(indexNull in fourth) {
         result = fourth[indexNull];
     } 

@@ -1,4 +1,4 @@
-// const List = require('../List/List.js');
+//const List = require('../List/List.js');
 
 function AList(array) {
     //List.apply(this);
@@ -201,6 +201,15 @@ AList.prototype.addPos = function(position, elem ) {
     }
     this.arr[position] = elem
     return this.arr;  
+}
+
+AList.prototype.toArray = function() {
+    let newArr=[];
+    for (let i=0; i < this.size(); i++) {
+        
+        newArr[i] = this.arr[i];
+    } 
+    return this.arr = newArr
 }
 
 module.exports.AList = AList;

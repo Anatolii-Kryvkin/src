@@ -1,7 +1,5 @@
 const { AList } = require('../AList');
 
-let testArray = new AList([35, 89, 54, 39, 12]);
-
 describe('addStart', function () {
     it('input 77 addStart', function () {
         let arrayAddStart = new AList([8, 10, 4, 2, 26, 25]);
@@ -163,5 +161,12 @@ describe('addPos', function () {
         let arrayAddPos = new AList([8, 10, 4, 2, 26, 25]);
             arrayAddPos.addPos(4, 8);
             assert.deepEqual(arrayAddPos.size(), 7)
+    })
+});
+describe('toArray', function () {
+    it('String to array elements', function () {
+        let arrayToArray = new AList('810422625');
+            arrayToArray.toArray();
+            assert.deepEqual(arrayToArray.size(), 9)
     })
 });

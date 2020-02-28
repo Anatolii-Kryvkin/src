@@ -1,4 +1,3 @@
-
 let numbers = document.querySelectorAll('.number'),
     operations = document.querySelectorAll('.operation'),
     del = document.getElementById('ac'),
@@ -118,3 +117,6 @@ if ((localMinusMemory === '0') || (localMinusMemory = ' ')) {
 } 
     display.value = localMinusMemory;
 }
+
+module.exports.AList = AList;
+
