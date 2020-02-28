@@ -22,45 +22,54 @@ deleteBtn.addEventListener('click', del);
             age.value === '') {
                 alert('Enter all data!')
 
-            } else   { 
+        } else { 
+            let comparison = true;
+            for(let j = 0; j < people.length; j++) {
+                if(id.value == people[j].id.innerHTML) {
+                    comparison = false;
+                    }
+                }
 
-                let newTable = document.createElement('div');
-                    newTable.className = "newtable";
-                    dell.appendChild(newTable);
+                if(comparison) {
 
-                let newId = document.createElement('div');               
-                    newId.className = "row-new-table";
-                    newId.innerHTML = document.getElementById('id').value;
-                    newTable.appendChild(newId);
+                    let newTable = document.createElement('div');
+                        newTable.className = "newtable";
+                        dell.appendChild(newTable);
 
-                let newFirstName = document.createElement('div');
-                    newFirstName.className = "row-new-table";
-                    newFirstName.innerHTML = document.getElementById('first-name').value;
-                    newTable.appendChild(newFirstName);
+                    let newId = document.createElement('div');               
+                        newId.className = "row-new-table";
+                        newId.innerHTML = document.getElementById('id').value;
+                        newTable.appendChild(newId);
 
-                let newLastName = document.createElement('div');
-                    newLastName.className = "row-new-table";
-                    newLastName.innerHTML = document.getElementById('last-name').value;
-                    newTable.appendChild(newLastName);
+                    let newFirstName = document.createElement('div');
+                        newFirstName.className = "row-new-table";
+                        newFirstName.innerHTML = document.getElementById('first-name').value;
+                        newTable.appendChild(newFirstName);
 
-                let newAge = document.createElement('div');
-                    newAge.className = "row-new-table";
-                    newAge.innerHTML = document.getElementById('age').value;
-                    newTable.appendChild(newAge);
-                        
-                
-                    const person = new Object();
-                        person.source = newTable;
-                        person.id = newId,
-                        person.firstName = newFirstName,
-                        person.lastName = newLastName,
-                        person.age = newAge;
-                        people.unshift(person);
-                        console.log(people);
-                    let key = id.value ;
-                    localStorage.setItem(key, person.source.innerHTML)
+                    let newLastName = document.createElement('div');
+                        newLastName.className = "row-new-table";
+                        newLastName.innerHTML = document.getElementById('last-name').value;
+                        newTable.appendChild(newLastName);
+
+                    let newAge = document.createElement('div');
+                        newAge.className = "row-new-table";
+                        newAge.innerHTML = document.getElementById('age').value;
+                        newTable.appendChild(newAge);
+                            
                     
-        }   
+                        const person = new Object();
+                            person.source = newTable;
+                            person.id = newId,
+                            person.firstName = newFirstName,
+                            person.lastName = newLastName,
+                            person.age = newAge;
+                            people.push(person);
+                        let key = id.value ;
+                        localStorage.setItem(key, person.source.innerHTML)
+                } else {
+                    alert('ID busy! Enter a new ID')
+                }
+        } 
         clear(); 
     }   
 
@@ -79,7 +88,7 @@ deleteBtn.addEventListener('click', del);
                   person.firstName = key
                   person.lastName = key
                   person.age = key
-                  people.unshift(person)
+                  people.push(person)
         }
     localStorage.clear();
     };
@@ -87,23 +96,27 @@ deleteBtn.addEventListener('click', del);
     function update() {
         if (id.value === '') {
             alert('Not found, enter ID!')
-        } else {
-            for(let i=0; i<people.length; i++) {
-                if(id.value === people[i].id.innerHTML) {
+        } else { 
+            let equal = false;   
+            for(let i=0; i<people.length; ++i) {
+                if (id.value == people[i].id.innerHTML) {
                     people[i].firstName.innerHTML = firstName.value;
                     people[i].lastName.innerHTML = lastName.value;
                     people[i].age.innerHTML = age.value;
+                    equal = true;
 
-                } else if (id.value === people[i].id) { 
+                } else if (id.value == people[i].id) { 
 
                     people[i].source.children[1].innerText = firstName.value;
                     people[i].source.children[2].innerText = lastName.value;
-                    people[i].source.children[3].innerText = age.value;
-                    
-                } else if (id.value != people[i].id.innerHTML && id.value != people[i].id){
-                    alert('Sorry, this ID not found!')
+                    people[i].source.children[3].innerText = age.value; 
+                    equal = true;
+
                 }
-            }
+            }   
+            if (!equal) {
+                alert('Sorry, this ID not found!')
+            } 
         } 
         clear(); 
     };
@@ -112,17 +125,20 @@ deleteBtn.addEventListener('click', del);
         if (id.value === '') {
             alert('Not found, enter ID!')
         } else {
+            let equal = false;   
             for(let i=0; i<people.length; i++) {
                 if(id.value === people[i].id.innerHTML) {   
                     dell.removeChild(people[i].source)
+                    equal = true;
                 } 
                 else if (id.value === people[i].id)  {
                     dell.removeChild(people[i].source);
-                } 
-                else if (id.value != people[i].id.innerHTML && id.value != people[i].id) {
-                   alert('Sorry, this ID not found!')
+                    equal = true;
                 } 
             }
+            if (!equal) {
+                alert('Sorry, this ID not found!')
+            } 
         } 
         clear();  
     };
