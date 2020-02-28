@@ -118,5 +118,5 @@ if ((localMinusMemory === '0') || (localMinusMemory = ' ')) {
     display.value = localMinusMemory;
 }
 
-module.exports.AList = AList;
+
 
