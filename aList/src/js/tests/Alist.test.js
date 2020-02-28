@@ -165,10 +165,3 @@ describe('addPos', function () {
             assert.deepEqual(arrayAddPos.size(), 7)
     })
 });
-describe('toArray', function () {
-    it('String to array elements', function () {
-        let arrayToArray = new AList('810422625');
-            arrayToArray.toArray();
-            assert.deepEqual(arrayToArray.size(), 9)
-    })
-});

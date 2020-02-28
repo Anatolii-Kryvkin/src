@@ -203,13 +203,4 @@ AList.prototype.addPos = function(position, elem ) {
     return this.arr;  
 }
 
-AList.prototype.toArray = function() {
-    let newArr=[];
-    for (let i=0; i < this.size(); i++) {
-        
-        newArr[i] = this.arr[i];
-    } 
-    return this.arr = newArr
-}
-
 module.exports.AList = AList;
