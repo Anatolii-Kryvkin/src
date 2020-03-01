@@ -69,7 +69,7 @@ describe('get', function () {
 describe('set', function () {
     it('Set elements', function () {
         let arraySet = new AList([8, 10, 4, 2, 26, 25]);
-        arraySet.set(3);
+        arraySet.set(5, 3);
         assert.deepEqual(arraySet.size(), 6)
     })
 });
@@ -163,10 +163,4 @@ describe('addPos', function () {
             assert.deepEqual(arrayAddPos.size(), 7)
     })
 });
-describe('toArray', function () {
-    it('String to array elements', function () {
-        let arrayToArray = new AList('810422625');
-            arrayToArray.toArray();
-            assert.deepEqual(arrayToArray.size(), 9)
-    })
-});
+

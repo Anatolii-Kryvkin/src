@@ -1,7 +1,7 @@
-//const List = require('../List/List.js');
+// const List = require('../List/List.js');
 
 function AList(array) {
-    //List.apply(this);
+    // List.apply(this);
     this.defaultArray = array;
     this.arr = [];
     this.init()
