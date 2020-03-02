@@ -1,9 +1,12 @@
+let {add, sub, mult, div } = require('../logic')
 
+const assert = require('assert')
 
 
 describe("add", function() {
     it("enter 6+4", function () {
-        assert.equal(add(6, 4), 10);
+        let res = add(6, 4)
+        assert.equal(res, 10);
     });
     it("enter 4343+90", function () {
         assert.equal(add(4343, 90), 4433);
