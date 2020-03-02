@@ -65,6 +65,7 @@ describe('get', function () {
         arrayGet.get(3);
         assert.deepEqual(arrayGet.size(), 6)
     })
+    
 }); 
 describe('set', function () {
     it('Set elements', function () {
@@ -72,12 +73,18 @@ describe('set', function () {
         arraySet.set(5, 3);
         assert.deepEqual(arraySet.size(), 6)
     })
+    it('Set elements', function () {
+        let arraySet = new Llist([8, 10, 4, 2, 26, 25]);
+        arraySet.clear();
+        arraySet.set(5, 3);
+        assert.deepEqual(arraySet.get(3), 5)
+    })
 });
 describe('toString', function () {
     it('String arrays', function () {
         let arrayToString = new AList([8, 10, 4, 2, 26, 25]);
         arrayToString.toString ();
-        assert.deepEqual(arrayToString.size(), 9)
+        assert.deepEqual(arrayToString.toString(), '810422625')
     })
 }); 
 describe('size', function () {
