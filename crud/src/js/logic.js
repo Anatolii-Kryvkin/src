@@ -1,21 +1,16 @@
+function create(id, firstName, lastName, age) {
+  const person = new Object();
+  (id = newId), (firstName = newFirstName), (lastName = newLastName), (age = newAge);
 
-
-function create(id, firstName, lastName, age)  {
-    let person = {
-        id: id,
-        firstName: firstName,
-        lastName: lastName,
-        age: age
-    }
-    return person
+  return person;
 }
 
 function del(id) {
-    localStorage.removeItem(id)
-    return "delete data line"
+  localStorage.removeItem(id);
+  return 'delete data line';
 }
 
 module.exports.func = {
-    create: create,
-    del: del
-}
+  create,
+  del,
+};
