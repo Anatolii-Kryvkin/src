@@ -1,7 +1,7 @@
-const List = require('/List/List.js');
+const List = require('../../../List/List').List;
 
 function AList(array) {
-    List.apply(this);
+    
     this.defaultArray = array;
     this.arr = [];
     this.init()
@@ -102,10 +102,11 @@ AList.prototype.toString = function() {
         str += this.arr[i];
         newArr[i] = this.arr[i];
     } 
-    return this.arr = str
+    return str
 }
 
 AList.prototype.clear = function() {
+    this.init();
     return this.defaultArray;
 }
 

@@ -1,8 +1,8 @@
-let id = document.getElementById('id'),
+const id = document.getElementById('id'),
     firstName = document.getElementById('first-name'),
     lastName = document.getElementById('last-name'),
-    age = document.getElementById('age'),
-    createBtn = document.getElementById('create'),
+    age = document.getElementById('age');
+let createBtn = document.getElementById('create'),
     readBtn = document.getElementById('read'),
     updateBtn = document.getElementById('update'),
     deleteBtn = document.getElementById('del'),
