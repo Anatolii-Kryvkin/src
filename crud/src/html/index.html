@@ -5,38 +5,60 @@
     <meta name="keywords" content="Database data table person people">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta http-equiv="content-language" content="en">
-    <meta http-equiv="refresh" content="60">
+    <meta http-equiv="refresh" content="240">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index">
     <meta name="description" content="Four basic functions used when working with databases.
     When working with the database, these four operations are used: creation (create), reading (read), updating (update), deletion (delete).">
     <meta name="author" content="Kryvkin Anatolii">
     <meta name="copyright" content="All rights belong to Anatoly Kryvkin">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
+    <h1>CRUD Database</h1>
 	<div class="conteiner">
-        <div class="write-panel">
-            <input class="write" id = "id" type="number" name="textview" placeholder="Enter ID"/>
-            <input class="write" id = "first-name" type="text" name="textview" placeholder="Enter Firstname"/>
-            <input class="write" id = "last-name" type="text" name="textview" placeholder="Enter Lastname"/>
-            <input class="write" id = "age" type="number" name="number" placeholder="Enter Age"/>
+        <div class="head">
+            <div class="head__radio">
+                <div class="head__radio-row">
+                    <label for="localStorage">LOCAL STORAGE</label>
+                    <input type="radio" id="local-storage" name="contact" value="localStorage">
+                </div>
+                <div class="head__radio-row">
+                    <label for="indexDB">INDEXED DB</label>
+                    <input type="radio" id="indexdb" name="contact" value="indexBD">
+                </div>
+                <div class="head__radio-row">
+                    <label for="server">SERVER</label>
+                    <input type="radio" id="server" name="contact" value="server">
+                </div>
+            </div> 
+            <div class="head__front"> 
+                <div class="head__front-input">
+                    <input class="front__input-write" id = "id" type="number" name="textview" placeholder="Enter ID"/>
+                    <input class="front__input-write" id = "first-name" type="text" name="textview" placeholder="Enter Firstname"/>
+                    <input class="front__input-write" id = "last-name" type="text" name="textview" placeholder="Enter Lastname">
+                    <input class="front__input-write" id = "age" type="number" name="number" placeholder="Enter Age"/>
+                    <input class="front__input-write" id = "email" type="text" name="textview" placeholder="Enter Email"/>
+                    <input class="front__input-write" id = "phone" type="text" name="textview" placeholder="Enter Phone"/>
+                </div>
+                <div class="head__button-panel">
+                    <button type="button" value="create" id="create" class="btn btn--hover create">CREATE</button>
+                    <button type="button" value="update" id="update" class="btn btn--hover update">UPDATE</button>
+                    <button type="button" value="delete" id="del" class="btn btn--hover delete">DELETE</button>
+                </div>
+            </div>
         </div>
-        <div class="button-panel">
-            <button type="button" value="create" id="create" class="btn create">CREATE</button>
-            <button type="button" value="read" id="read" class="btn read">READ</button>
-            <button type="button" value="update" id="update" class="btn update">UPDATE</button>
-            <button type="button" value="delete" id="del" class="btn delete">DELETE</button>
+        <div class="data"> 
+            <div class="data__column">ID</div>
+            <div class="data__column">Firstname</div>
+            <div class="data__column">Lastname</div>
+            <div class="data__column">Age</div>
+            <div class="data__column">Email</div>
+            <div class="data__column">Phone</div>
         </div>
-        <div class="table"> 
-            <div class="column id-column">ID</div>
-            <div class="column firs-name-colum">First name</div>
-            <div class="column last-name-colum">Last name</div>
-            <div class="column age-colum">Age</div>
-        </div>
-		<div class="del"></div>
-	</div>	
-	<script src="js/index.js"></script>
+        <div class="del"></div>
+    </div>
+    
+    <script src="js/index.js"></script>
 </body>
 </html>
